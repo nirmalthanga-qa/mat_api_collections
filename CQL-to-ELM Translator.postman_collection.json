@@ -1,0 +1,396 @@
+{
+  "info": {
+    "_postman_id": "e96cf4bd-8d3b-4d41-aece-b900272c0c17",
+    "name": "CQL-to-ELM Translator",
+    "description": "This is a SpringBoot v2.3.x restful service for converting CQL-to-ELM.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2873628",
+    "_collection_link": "https://go.postman.co/collection/2873628-e96cf4bd-8d3b-4d41-aece-b900272c0c17?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "cql",
+      "item": [
+        {
+          "name": "translator",
+          "item": [
+            {
+              "name": "cql To Elm Json",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "text/plain"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "library SepsisExport version '1.0.039'\n\nusing FHIR version '4.0.1'\n\ninclude FHIRHelpers version '4.0.001' called FHIRHelpers\ninclude SupplementalDataElements_FHIR4 version '2.0.000' called SDE\ninclude MATGlobalCommonFunctions_FHIR4 version '5.0.000' called Global\n\nparameter \"Measurement Period\" Interval<DateTime>\n\ncontext Patient\n\ndefine \"Numerator\":\n  1\n\ndefine \"Denominator\":\n  2\n\ndefine \"Numerator Exclusion\":\n  3\n\ndefine \"Denominator Exclusion\":\n  4\n\ndefine \"initial Population\":\n  5\n\ndefine \"SDE Ethnicity\":\n  SDE.\"SDE Ethnicity\"\n\ndefine \"SDE Payer\":\n  SDE.\"SDE Payer\"\n\ndefine \"SDE Race\":\n  SDE.\"SDE Race\"\n\ndefine \"SDE Sex\":\n  SDE.\"SDE Sex\"\n"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}:{{port}}/cql/translator/cql?showWarnings=false&annotations=true&locators=true&disable-list-demotion=true&disable-list-promotion=true&disable-method-invocation=true&validate-units=true",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "{{port}}",
+                  "path": [
+                    "cql",
+                    "translator",
+                    "cql"
+                  ],
+                  "query": [
+                    {
+                      "key": "signatures",
+                      "value": "<string>",
+                      "disabled": true
+                    },
+                    {
+                      "key": "showWarnings",
+                      "value": "false"
+                    },
+                    {
+                      "key": "annotations",
+                      "value": "true"
+                    },
+                    {
+                      "key": "locators",
+                      "value": "true"
+                    },
+                    {
+                      "key": "disable-list-demotion",
+                      "value": "true"
+                    },
+                    {
+                      "key": "disable-list-promotion",
+                      "value": "true"
+                    },
+                    {
+                      "key": "disable-method-invocation",
+                      "value": "true"
+                    },
+                    {
+                      "key": "validate-units",
+                      "value": "true"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "\"<string>\""
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/cql/translator/cql?signatures=<string>&showWarnings=false&annotations=true&locators=true&disable-list-demotion=true&disable-list-promotion=true&disable-method-invocation=true&validate-units=true",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "cql",
+                        "translator",
+                        "cql"
+                      ],
+                      "query": [
+                        {
+                          "key": "signatures",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "showWarnings",
+                          "value": "false"
+                        },
+                        {
+                          "key": "annotations",
+                          "value": "true"
+                        },
+                        {
+                          "key": "locators",
+                          "value": "true"
+                        },
+                        {
+                          "key": "disable-list-demotion",
+                          "value": "true"
+                        },
+                        {
+                          "key": "disable-list-promotion",
+                          "value": "true"
+                        },
+                        {
+                          "key": "disable-method-invocation",
+                          "value": "true"
+                        },
+                        {
+                          "key": "validate-units",
+                          "value": "true"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/elm+json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n \"json\": \"<string>\",\n \"xml\": \"<string>\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "xml To Elm Json",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "text/plain"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{baseUrl}}:{{port}}/cql/translator/xml?showWarnings=false&isDraft=true&annotations=true&locators=true&disable-list-demotion=true&disable-list-promotion=true&disable-method-invocation=true&validate-units=true",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "{{port}}",
+                  "path": [
+                    "cql",
+                    "translator",
+                    "xml"
+                  ],
+                  "query": [
+                    {
+                      "key": "showWarnings",
+                      "value": "false"
+                    },
+                    {
+                      "key": "isDraft",
+                      "value": "true"
+                    },
+                    {
+                      "key": "signatures",
+                      "value": "<string>",
+                      "disabled": true
+                    },
+                    {
+                      "key": "annotations",
+                      "value": "true"
+                    },
+                    {
+                      "key": "locators",
+                      "value": "true"
+                    },
+                    {
+                      "key": "disable-list-demotion",
+                      "value": "true"
+                    },
+                    {
+                      "key": "disable-list-promotion",
+                      "value": "true"
+                    },
+                    {
+                      "key": "disable-method-invocation",
+                      "value": "true"
+                    },
+                    {
+                      "key": "validate-units",
+                      "value": "true"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "\"<string>\""
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/cql/translator/xml?showWarnings=false&isDraft=true&signatures=<string>&annotations=true&locators=true&disable-list-demotion=true&disable-list-promotion=true&disable-method-invocation=true&validate-units=true",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "cql",
+                        "translator",
+                        "xml"
+                      ],
+                      "query": [
+                        {
+                          "key": "showWarnings",
+                          "value": "false"
+                        },
+                        {
+                          "key": "isDraft",
+                          "value": "true"
+                        },
+                        {
+                          "key": "signatures",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "annotations",
+                          "value": "true"
+                        },
+                        {
+                          "key": "locators",
+                          "value": "true"
+                        },
+                        {
+                          "key": "disable-list-demotion",
+                          "value": "true"
+                        },
+                        {
+                          "key": "disable-list-promotion",
+                          "value": "true"
+                        },
+                        {
+                          "key": "disable-method-invocation",
+                          "value": "true"
+                        },
+                        {
+                          "key": "validate-units",
+                          "value": "true"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/elm+json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "\"<string>\""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "convert Xml To Cql",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/plain"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{baseUrl}}:{{port}}/cql/marshaller",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "cql",
+                "marshaller"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"<string>\""
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/cql/marshaller",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "cql",
+                    "marshaller"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "body": "<string>"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://internal-mat-dev-ecs-lb-1195232407.us-east-1.elb.amazonaws.com:7070",
+      "type": "string"
+    },
+    {
+      "key": "port",
+      "value": "7070",
+      "type": "string"
+    }
+  ]
+}
